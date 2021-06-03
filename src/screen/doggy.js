@@ -16,7 +16,8 @@ export default function doggy() {
   const apiCall = () => {
     axios
       .get(`https://dog.ceo/api/breed/${name}/images/random`)
-      .then(res => setData(res.data));
+      .then(res => setData(res.data))
+      .catch(err => alert(err));
   };
   return (
     <SafeAreaView>
@@ -37,8 +38,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   stretch: {
-    width: 200,
-    height: 200,
+    width: 300,
+    height: 300,
     resizeMode: 'stretch',
   },
 });
